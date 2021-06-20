@@ -12,11 +12,12 @@ def n_input(window, t):
     def clicked():
         try:
             n = int(txt.get())
+            assert(n >= 1)
             lbl.configure(text="تعداد متغیرهای تصمیم با موفقیت ثبت شد")
             m_input(window, t, n)
 
         except Exception as e:
-            lbl.configure(text="لطفاً  یک عدد وارد کنید")
+            lbl.configure(text="لطفاً یک عدد مثبت وارد کنید")
             print(e)
 
     btn = Button(window, text="ثبت کن", command=clicked)

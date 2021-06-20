@@ -12,6 +12,7 @@ def m_input(window, t, n):
     def clicked():
         try:
             m = int(txt.get())
+            assert(m >= 1)
             lbl.configure(text="تعداد قیدهای مسئله با موفقیت ثبت شد")
             table_input(window, t, n, m)
 

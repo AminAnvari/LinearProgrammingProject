@@ -2,17 +2,17 @@ from fix_table import fix_table
 from lola_table import lola_table
 
 
-# Just For DEBUG
-def pt(t):
-    print("printing")
-    for i in range(len(t)):
-        for j in range(len(t[i])):
-            if int(t[i][j]) >= 0:
-                print('+' + str(int(t[i][j])), end=' ')
-            else:
-                print(int(t[i][j]), end=' ')
-        print()
-    print()
+# # Just For DEBUG
+# def pt(t):
+#     print("printing")
+#     for i in range(len(t)):
+#         for j in range(len(t[i])):
+#             if int(t[i][j]) >= 0:
+#                 print('+' + str(int(t[i][j])), end=' ')
+#             else:
+#                 print(int(t[i][j]), end=' ')
+#         print()
+#     print()
 
 
 def two_phase(x, r):
@@ -29,12 +29,12 @@ def two_phase(x, r):
         if x[i][len(x[i]) - 1] < -eps:
             return 'Impossible!'
 
-    print('phase_1')
-    pt(x)
+    # print('phase_1')
+    # pt(x)
     while True:
         fix_table(x)
         res = lola_table(x)
-        pt(x)
+        # pt(x)
 
         if res != 'Continue!':
             break
@@ -46,12 +46,12 @@ def two_phase(x, r):
     for i in range(len(x)):
         for j in range(r):
             x[i].pop(len(x[i]) - 1 - r)
-    print('phase_2')
-    pt(x)
+    # print('phase_2')
+    # pt(x)
 
     while True:
         fix_table(x)
         res = lola_table(x)
-        pt(x)
+        # pt(x)
         if res != 'Continue!':
             return res

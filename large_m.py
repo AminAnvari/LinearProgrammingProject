@@ -3,16 +3,16 @@ from lola_table import lola_table
 
 
 # Just For DEBUG
-def pt(t):
-    print("printing")
-    for i in range(len(t)):
-        for j in range(len(t[i])):
-            if int(t[i][j]) >= 0:
-                print('+' + str(int(t[i][j])), end=' ')
-            else:
-                print(int(t[i][j]), end=' ')
-        print()
-    print()
+# def pt(t):
+#     print("printing")
+#     for i in range(len(t)):
+#         for j in range(len(t[i])):
+#             if int(t[i][j]) >= 0:
+#                 print('+' + str(int(t[i][j])), end=' ')
+#             else:
+#                 print(int(t[i][j]), end=' ')
+#         print()
+#     print()
 
 
 def large_m(x, r):
@@ -25,11 +25,8 @@ def large_m(x, r):
         if x[i][len(x[i]) - 1] < -eps:
             return 'Impossible!'
 
-    pt(x)
     while True:
         fix_table(x)
         res = lola_table(x)
-        pt(x)
-
         if res != 'Continue!':
             return res
