@@ -14,6 +14,7 @@ def type_input(window):
     def clicked():
         try:
             t = combo.get()
+            assert (t in ['MIN', 'MAX'])
             lbl.configure(text="نوع حل مسئله با موفقیت ثبت شد")
             n_input(window, t)
 

@@ -6,15 +6,18 @@ from dual_simplex import dual_simplex
 
 
 def run_algorithm(window, algorithm_number, t, n, m, x):
-    r = make_initial_table(t, n, m, x)
     if algorithm_number == 1:
+        r = make_initial_table(t, n, m, x)
         ans = large_m(x, r)
-        user_output(window, ans, x)
+        user_output(window, ans, t, n, x)
     elif algorithm_number == 2:
+        r = make_initial_table(t, n, m, x)
         ans = two_phase(x, r)
-        user_output(window, ans, x)
+        user_output(window, ans, t, n, x)
     elif algorithm_number == 3:
-        ans = dual_simplex()
-        user_output(window, ans, x)
+        n, m = dual_simplex(t, n, m, x)
+        r = make_initial_table(t, n, m, x)
+        ans = large_m(x, r)
+        user_output(window, ans, t, n, x)
     else:
         print('NO item is selected!')
