@@ -12,7 +12,9 @@ def run_algorithm(window, algorithm_number, t, n, m, x):
         user_output(window, ans, x)
     elif algorithm_number == 2:
         ans = two_phase(x, r)
+        user_output(window, ans, x)
     elif algorithm_number == 3:
-        dual_simplex()
+        ans = dual_simplex()
+        user_output(window, ans, x)
     else:
         print('NO item is selected!')
