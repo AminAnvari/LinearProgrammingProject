@@ -1,5 +1,5 @@
 from tkinter import *
-from n_input import n_input
+from type_input import type_input
 
 
 def user_input():
@@ -7,7 +7,7 @@ def user_input():
     window.title("Welcome to Linear Programming app")
     window.geometry('700x400')
 
-    n_input(window)
+    type_input(window)
 
     window.mainloop()
 

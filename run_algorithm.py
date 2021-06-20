@@ -5,8 +5,8 @@ from two_phase import two_phase
 from dual_simplex import dual_simplex
 
 
-def run_algorithm(window, algorithm_number, n, m, x):
-    r = make_initial_table(n, m, x)
+def run_algorithm(window, algorithm_number, t, n, m, x):
+    r = make_initial_table(t, n, m, x)
     if algorithm_number == 1:
         ans = large_m(x, r)
         user_output(window, ans, x)

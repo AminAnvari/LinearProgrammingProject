@@ -3,16 +3,16 @@ from tkinter import *
 from algorithm_input import algorithm_input
 
 
-def table_input(window, n, m):
+def table_input(window, t, n, m):
     x = []
     table_boxes = []
     function = []
     for i in range(n):
         lbl = Label(window, text='y' + str(i + 1))
-        lbl.grid(column=2*i+0, row=3)
+        lbl.grid(column=2*i+0, row=4)
 
         txt = Entry(window, width=5)
-        txt.grid(column=2*i+1, row=3)
+        txt.grid(column=2*i+1, row=4)
 
         function.append(txt)
 
@@ -22,22 +22,22 @@ def table_input(window, n, m):
         row_boxes = []
         for j in range(n):
             lbl = Label(window, text='x' + str(i + 1) + ',' + str(j + 1))
-            lbl.grid(column=2*j+0, row=4+i)
+            lbl.grid(column=2*j+0, row=5+i)
 
             txt = Entry(window, width=5)
-            txt.grid(column=2*j+1, row=4+i)
+            txt.grid(column=2*j+1, row=5+i)
 
             row_boxes.append(txt)
 
         combo = Combobox(window)
         combo['values'] = ('=', '<=', '>=')
-        combo.grid(column=2*n, row=4 + i)
+        combo.grid(column=2*n, row=5+i)
 
         lbl = Label(window, text='b' + str(i + 1))
-        lbl.grid(column=2*n+1, row=4 + i)
+        lbl.grid(column=2*n+1, row=5+i)
 
         txt = Entry(window, width=5)
-        txt.grid(column=2*n+2, row=4 + i)
+        txt.grid(column=2*n+2, row=5+i)
 
         row_boxes.append(combo)
         row_boxes.append(txt)
@@ -61,10 +61,10 @@ def table_input(window, n, m):
 
                 x.append(x_row)
 
-            algorithm_input(window, n, m, x)
+            algorithm_input(window, t, n, m, x)
         except Exception as e:
             lbl.configure(text="لطفاً درست وارد کنید!")
             print(e)
 
     btn = Button(window, text="ثبت کن", command=clicked)
-    btn.grid(column=3, row=4+m)
+    btn.grid(column=3, row=5+m)

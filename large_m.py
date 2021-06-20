@@ -25,10 +25,11 @@ def large_m(x, r):
         if x[i][len(x[i]) - 1] < -eps:
             return 'Impossible!'
 
+    pt(x)
     while True:
-        pt(x)
         fix_table(x)
         res = lola_table(x)
+        pt(x)
 
         if res != 'Continue!':
             return res

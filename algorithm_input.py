@@ -2,7 +2,7 @@ from tkinter import *
 from run_algorithm import run_algorithm
 
 
-def algorithm_input(window, n, m, x):
+def algorithm_input(window,t, n, m, x):
     selected = IntVar()
     rad1 = Radiobutton(window, text='روش M-بزرگ', value=1, variable=selected)
     rad1.grid(column=0, row=20)
@@ -15,7 +15,7 @@ def algorithm_input(window, n, m, x):
 
     def clicked():
         algorithm_number = selected.get()
-        run_algorithm(window, algorithm_number, n, m, x)
+        run_algorithm(window, algorithm_number, t, n, m, x)
 
     solve_btn = Button(window, text="حل کن", command=clicked)
     solve_btn.grid(column=3, row=20)

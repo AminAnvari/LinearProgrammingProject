@@ -1,7 +1,7 @@
 def lola_table(x):
     eps = 0.000000000000001
     c_idx = -1
-    for i in range(1, len(x[0])):
+    for i in range(1, len(x[0]) - 1):
         if c_idx == -1 or x[0][i] < x[0][c_idx]:
             c_idx = i
 
