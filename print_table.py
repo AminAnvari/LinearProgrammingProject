@@ -1,4 +1,5 @@
 from tkinter import *
+from print_text import print_text
 
 
 def print_table(window, row, t, n, x):
@@ -11,6 +12,10 @@ def print_table(window, row, t, n, x):
     z = x[0][len(x[0]) - 1]
     if t == 'MIN':
         z *= -1
+
+    for val in ans:
+        if val < 0.0:
+            print_text(window, row, 'Impossible!')
 
     lbl = Label(window, text='Z: ' + str(format(z, '.3f')))
     lbl.grid(column=0, row=row)
